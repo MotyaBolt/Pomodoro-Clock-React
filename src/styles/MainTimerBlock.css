@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.main-timer-block {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  margin-top: 4vw;
+  color: #fffbf1;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10vw;
+  margin-bottom: 2vw;
+}
+
+.fas {
+  color: #fffbf1;
+  font-size: 4vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fas:hover {
+  color: #e6e3db;
+}
+
+.timer-btns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+}

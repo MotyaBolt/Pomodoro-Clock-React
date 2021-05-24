@@ -132,7 +132,6 @@ const MainTimerBlock = (props) => {
   };
 
   const resetTimer = () => {
-    console.log(clockSound);
     if (clockSound !== null && !clockSound.paused) {
       clockSound.pause();
       clockSound.currentTime = 0;

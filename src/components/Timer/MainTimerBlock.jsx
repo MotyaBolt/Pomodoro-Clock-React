@@ -10,17 +10,20 @@ const MainTimerBlock = (props) => {
   const [timerLabel, setTimerLabel] = useState('Session');
   const [menuOption, setMenuOption] = useState(props.menuOption);
   const clockSound = document.getElementById('beep');
+  const [firstStart, setFirstStart] = useState(false);
 
   const restartSession = () => {
     setSessionLength(props.sessionLength);
     setGlobalTime(props.sessionLength * 60);
     setTimerStatus(false);
+    setFirstStart(false);
   };
 
   const restartBreak = () => {
     setBreakLength(props.breakLength);
     setGlobalTime(props.breakLength * 60);
     setTimerStatus(false);
+    setFirstStart(false);
   };
 
   const restartLoop = () => {
@@ -28,6 +31,7 @@ const MainTimerBlock = (props) => {
     setBreakLength(props.breakLength);
     setGlobalTime(props.sessionLength * 60);
     setTimerStatus(false);
+    setFirstStart(false);
   };
 
   const loopSwitch = () => {
@@ -106,11 +110,16 @@ const MainTimerBlock = (props) => {
     props.menuOption,
     props.sessionLength,
     props.breakLength,
+    firstStart,
   ]);
 
   let [minutes, seconds] = [Math.floor(globalTime / 60), globalTime % 60];
 
   const startTimer = () => {
+    if (firstStart === false) {
+      timerInterval();
+      setFirstStart(true);
+    }
     if (!timerIsStarted) setTimerStatus(true);
   };
 

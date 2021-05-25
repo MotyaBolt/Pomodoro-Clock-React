@@ -1,3 +1,20 @@
 # Pomodoro-Clock Project
 
-<img width="1280" alt="Screen Shot 2021-05-19 at 11 41 56 PM" src="https://user-images.githubusercontent.com/66522023/118881478-cd8ffd80-b8fb-11eb-9dbc-c3a57e8f48be.png">
+![pomodoro-app](http://g.recordit.co/WvX3bjTcDO.gif)
+
+⬆️ <i>Appearance of the app</i>
+
+### [Live Demo](https://new-pomodoro-clock.herokuapp.com/)
+
+## ✏️ Description
+
+The app allows you to manage your time in a simple and accessible way
+
+## Installation
+
+To install this project run `$ npm install`
+
+## Usage
+
+Run command `$ npm start`, when go to http://localhost:3000/.
+If you want, you can change session or break length. To start timer press 'start' button.

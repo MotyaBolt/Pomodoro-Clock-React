@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import MainTimerBlock from './MainTimerBlock.jsx';
-import '../../styles/Timer.css';
+import React, { useState } from "react";
+import MainTimerBlock from "./MainTimerBlock.jsx";
+import "../../styles/Timer.css";
 
 const Timer = (props) => {
   const [sessionLength, setSessionLength] = useState(25);
   const [breakLength, setBreakLength] = useState(5);
-  const [sessionInputVal, setSessionInputVal] = useState('25');
-  const [breakInputVal, setBreakInputVal] = useState('5');
+  const [sessionInputVal, setSessionInputVal] = useState("25");
+  const [breakInputVal, setBreakInputVal] = useState("5");
 
   const sessionChangeHandler = (e) => {
     setSessionInputVal(e.target.value);
@@ -18,7 +18,7 @@ const Timer = (props) => {
 
   const saveTimeData = (e) => {
     if (e.keyCode === 13 || e.keyCode === undefined) {
-      if (sessionInputVal !== '' && breakInputVal !== '') {
+      if (sessionInputVal !== "" && breakInputVal !== "") {
         setSessionLength(parseFloat(sessionInputVal));
         setBreakLength(parseFloat(breakInputVal));
       }

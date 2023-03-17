@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import soundFile from '../../assets/clock_sound.mp3';
-import '../../styles/MainTimerBlock.css';
+import React, { useState, useEffect } from "react";
+import soundFile from "../../assets/clock_sound.mp3";
+import "../../styles/MainTimerBlock.css";
 
 const MainTimerBlock = (props) => {
   const [sessionLength, setSessionLength] = useState(props.sessionLength);
   const [breakLength, setBreakLength] = useState(props.breakLength);
   const [timerIsStarted, setTimerStatus] = useState(false);
   const [globalTime, setGlobalTime] = useState(props.sessionLength * 60);
-  const [timerLabel, setTimerLabel] = useState('Session');
+  const [timerLabel, setTimerLabel] = useState("Session");
   const [menuOption, setMenuOption] = useState(props.menuOption);
-  const clockSound = document.getElementById('beep');
+  const clockSound = document.getElementById("beep");
   const [firstStart, setFirstStart] = useState(false);
 
   const restartSession = () => {
@@ -35,23 +35,23 @@ const MainTimerBlock = (props) => {
   };
 
   const loopSwitch = () => {
-    if (timerLabel === 'Session') {
-      console.log('hre');
+    if (timerLabel === "Session") {
+      console.log("hre");
       setGlobalTime(props.breakLength * 60);
-      setTimerLabel('Break');
+      setTimerLabel("Break");
     } else {
       setGlobalTime(props.sessionLength * 60);
-      setTimerLabel('Session');
+      setTimerLabel("Session");
     }
   };
 
   useEffect(() => {
     if (menuOption !== props.menuOption) {
       setMenuOption(props.menuOption);
-      props.menuOption === 'Session' && props.menuOption !== 'Loop'
+      props.menuOption === "Session" && props.menuOption !== "Loop"
         ? restartSession()
         : restartBreak();
-      if (props.menuOption === 'Loop') {
+      if (props.menuOption === "Loop") {
         restartLoop();
       }
     }
@@ -61,7 +61,7 @@ const MainTimerBlock = (props) => {
       props.sessionLength > 0 &&
       props.sessionLength <= 60
     ) {
-      if (props.menuOption === 'Break') {
+      if (props.menuOption === "Break") {
         setSessionLength(props.sessionLength);
       } else {
         restartSession();
@@ -72,7 +72,7 @@ const MainTimerBlock = (props) => {
       props.breakLength > 0 &&
       props.breakLength <= 60
     ) {
-      if (props.menuOption === 'Loop' || props.menuOption === 'Session') {
+      if (props.menuOption === "Loop" || props.menuOption === "Session") {
         setBreakLength(props.breakLength);
       } else {
         restartBreak();
@@ -84,10 +84,10 @@ const MainTimerBlock = (props) => {
     if (timerIsStarted && globalTime > 0) {
       interval = setInterval(timerInterval, 1000);
     } else if (timerIsStarted && globalTime === 0) {
-      if (props.menuOption === 'Session') {
+      if (props.menuOption === "Session") {
         clockSound.play();
         restartSession();
-      } else if (props.menuOption === 'Break') {
+      } else if (props.menuOption === "Break") {
         clockSound.play();
         restartBreak();
       } else {
@@ -136,17 +136,17 @@ const MainTimerBlock = (props) => {
       clockSound.pause();
       clockSound.currentTime = 0;
     }
-    setTimerLabel('Session');
-    if (props.menuOption === 'Session') restartSession();
-    if (props.menuOption === 'Break') restartBreak();
-    if (props.menuOption === 'Loop') restartLoop();
+    setTimerLabel("Session");
+    if (props.menuOption === "Session") restartSession();
+    if (props.menuOption === "Break") restartBreak();
+    if (props.menuOption === "Loop") restartLoop();
   };
 
   return (
     <div className="main-timer-block">
       <span className="time">
-        {minutes < 10 ? '0' + minutes : minutes}:
-        {seconds < 10 ? '0' + seconds : seconds}
+        {minutes < 10 ? "0" + minutes : minutes}:
+        {seconds < 10 ? "0" + seconds : seconds}
       </span>
       <div className="timer-btns">
         <i className="fas fa-play" onClick={startTimer}></i>

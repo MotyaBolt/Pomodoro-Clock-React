@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
 html,
 body {
@@ -9,7 +9,7 @@ body {
   height: 100vh;
   display: flex;
   background-color: #e59379;
-  font-family: 'Aladin', cursive;
+  font-family: "Aladin", cursive;
 }
 
 .main-block {

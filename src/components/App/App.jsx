@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Menu from '../Menu/Menu.jsx';
-import Timer from '../Timer/Timer.jsx';
-import TodoList from '../TodoList/TodoList.jsx';
-import Header from '../Header/Header.jsx';
-import '../../styles/App.css';
+import React, { useState } from "react";
+import Menu from "../Menu/Menu.jsx";
+import Timer from "../Timer/Timer.jsx";
+import TodoList from "../TodoList/TodoList.jsx";
+import Header from "../Header/Header.jsx";
+import "../../styles/App.css";
 
 const App = () => {
-  const [menuOption, setMenuOption] = useState('Session');
+  const [menuOption, setMenuOption] = useState("Session");
 
   const choseMenuOption = (option) => {
     setMenuOption(option);

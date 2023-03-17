@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 .main-timer-block {
   height: 80%;
@@ -11,7 +11,7 @@
 .time {
   margin-top: 4vw;
   color: #fffbf1;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 10vw;
   margin-bottom: 2vw;
 }

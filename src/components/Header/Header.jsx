@@ -1,6 +1,6 @@
-import React from 'react';
-import '../../styles/Header.css';
-import logoPath from '../../assets/logo.png';
+import React from "react";
+import "../../styles/Header.css";
+import logoPath from "../../assets/logo.png";
 
 const Header = () => {
   return (

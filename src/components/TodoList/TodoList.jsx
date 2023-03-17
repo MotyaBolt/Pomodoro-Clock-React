@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import '../../styles/TodoList.css';
+import React, { useState } from "react";
+import "../../styles/TodoList.css";
 
-const TodoList = (props) => {
-  const [todoValue, setTodoValue] = useState('');
+const TodoList = () => {
+  const [todoValue, setTodoValue] = useState("");
   const [todosData, setTodosData] = useState([]);
 
   const todoInputChange = (e) => {
@@ -11,9 +11,9 @@ const TodoList = (props) => {
 
   const saveTodo = (e) => {
     if (e.keyCode === 13 || e.keyCode === undefined) {
-      if (todoValue !== '' && !todosData.includes(todoValue)) {
+      if (todoValue !== "" && !todosData.includes(todoValue)) {
         setTodosData([todoValue, ...todosData]);
-        setTodoValue('');
+        setTodoValue("");
       }
     }
   };
